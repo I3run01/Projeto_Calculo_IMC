@@ -1,3 +1,5 @@
+import { Nav } from './components/Nav'
+
 import { useState } from 'react'
 
 function App() {
@@ -5,8 +7,11 @@ function App() {
 
   return (
     <div>
-      
+      <main>
+        <Nav></Nav>
 
+      </main>
+      
     </div>
   )
 }
