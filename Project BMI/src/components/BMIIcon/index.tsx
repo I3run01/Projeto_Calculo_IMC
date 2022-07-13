@@ -2,25 +2,23 @@ import * as S from './style'
 
 
 type Props = {
+    bg: string
     image: string
     title: string
-    value: number
+    ResponseWeight: string
     subtittle: string
 
     
 }
 
-export const BMIICon = ({image, title, value, subtittle}: Props) => {
+export const BMIICon = ({bg, image, title, ResponseWeight, subtittle}: Props) => {
 
     return (
-        <S.BMIIcon>
+        <S.BMIIcon bg={bg}>
             <div><img src={image} alt="" /></div> 
             <h1>{title}</h1>
-            <h2>Your BMI is {value}kg/m²</h2>
-            <h3>{subtittle}</h3>
-            
-
-            
+            <h2>{ResponseWeight}</h2>
+            <h3>{subtittle}</h3>            
         </S.BMIIcon>
     )
 }

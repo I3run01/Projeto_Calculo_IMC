@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const BMIIcon = styled.aside`
+type BMIProps = {
+    bg: string
+}
+
+export const BMIIcon = styled.aside<BMIProps>`
+
     width: 80%;
     height: 80%;
-    background-color: #edb605;
+    background-color: ${props => props.bg};
     border-radius: 20px;
 
     div {

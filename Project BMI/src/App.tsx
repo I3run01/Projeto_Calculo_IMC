@@ -1,18 +1,60 @@
 import * as G from './GlobalStyles'
-
 import { Nav } from './components/Nav'
 import { Article } from './components/Article'
 import { BMIICon } from './components/BMIIcon'
-
+import { FourIcons } from './components/4Icons'
 import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [showTL, setShowTL] = useState(false)
+  const [showN, setShowN] = useState(false)
+  const [showOW, setShowOW] = useState(false)
+  const [showTOW, setShowTOW] = useState(false)
+  const [showFI, setShowFI] = useState(true)
+
+  const [BMI, SetBMI] = useState(0)
 
   const BMIShow = (value: number) => {
-    if(isNaN(value) == true) alert('You should put a number')
+    if(isNaN(value) == true || value == Infinity) value = 0
+    else SetBMI(Number(value.toFixed(2)))
 
-    else alert(value)
+    if(value == 0) {
+      setShowTL(false)
+      setShowN(false)
+      setShowOW(false)
+      setShowTOW(false)
+      setShowFI(true)
+    }
+    if(value > 0 && value < 18.5) {
+      setShowTL(true)
+      setShowN(false)
+      setShowOW(false)
+      setShowTOW(false)
+      setShowFI(false)
+    }
+    if(value >= 18.5 && value < 24.9 ) {
+      setShowTL(false)
+      setShowN(true)
+      setShowOW(false)
+      setShowTOW(false)
+      setShowFI(false)
+    }
+    if(value >= 24.9 && value < 30 ) {
+      setShowTL(false)
+      setShowN(false)
+      setShowOW(true)
+      setShowTOW(false)
+      setShowFI(false)
+    }
+    if(value >= 30) {
+      setShowTL(false)
+      setShowN(false)
+      setShowOW(false)
+      setShowTOW(true)
+      setShowFI(false)
+
+    }
   }
 
   return (
@@ -22,14 +64,46 @@ function App() {
         <G.FlexDiv>
           <Article  Fction={BMIShow} ></Article>
           <G.Aside>
-            <BMIICon
-              image='./images/down.png'
-              title='Over-weight'
-              value = {10}
-              subtittle = 'BMI is between 24.9 and 30'
-
-
-            ></BMIICon>
+            {showTL &&
+              <BMIICon
+                bg='#90908e' //gray
+                image='./images/down.png'
+                title='Too lean'
+                ResponseWeight = {`Your BMI is ${BMI} kg/m²`}
+                subtittle = 'BMI is less than 18.5'
+              ></BMIICon>
+            }
+            {showN &&
+              <BMIICon
+                bg='#62c83a' //green
+                image='./images/up.png'
+                title='Normal'
+                ResponseWeight = {`Your BMI is ${BMI} kg/m²`}
+                subtittle = 'BMI is between 18.5 and 24.9'
+              ></BMIICon>
+            }
+            {showOW &&
+              <BMIICon
+                bg='#835b16' //orange - yellow
+                image='./images/down.png'
+                title='Over weight'
+                ResponseWeight = {`Your BMI is ${BMI} kg/m²`}
+                subtittle = 'BMI is between 24.9 and 30'
+              ></BMIICon>
+            }
+            {showTOW &&
+              <BMIICon
+                bg='#800202' //red
+                image='./images/down.png'
+                title='Too Over weight'
+                ResponseWeight = {`Your BMI is ${BMI} kg/m²`}
+                subtittle = 'BMI is more than 30'
+              ></BMIICon>
+            }
+            {showFI && 
+              <FourIcons></FourIcons>
+            }
+            
           </G.Aside>
         </G.FlexDiv>
 
