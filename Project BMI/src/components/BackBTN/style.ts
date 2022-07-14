@@ -21,7 +21,5 @@ export const BMIIcon = styled.div`
         justify-content: center;
         align-items: center;
         transform: scale(0.5);
-
-        
     }
 `

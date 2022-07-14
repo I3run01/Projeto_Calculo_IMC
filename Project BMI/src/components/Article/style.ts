@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const article = styled.article`
     text-align: left;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     h1 {
         font-size: 2em;
@@ -38,6 +41,11 @@ export const article = styled.article`
             background-color: green;
         }
         
+    }
+
+    @media only screen and (max-width: 920px) {
+        width: max-content;
+        margin: auto;
     }
 
 `

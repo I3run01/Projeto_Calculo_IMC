@@ -122,16 +122,9 @@ function App() {
             {showBackBTC &&
               <BackBTN HideBTN={ShowBackBTC} ></BackBTN>
             }
-            
-
-            
-            
-            
           </G.Aside>
         </G.FlexDiv>
-        
       </G.main>
-      
     </div>
   )
 }

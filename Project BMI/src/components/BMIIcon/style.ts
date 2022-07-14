@@ -7,7 +7,7 @@ type BMIProps = {
 export const BMIIcon = styled.div<BMIProps>`
 
     width: 80%;
-    height: 80%;
+    height: auto;
     background-color: ${props => props.bg};
     border-radius: 20px;
 
