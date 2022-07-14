@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const main = styled.main`
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
+    padding: 40px;
 `
 export const FlexDiv = styled.div`
     display: flex;
@@ -16,6 +17,4 @@ export const Aside = styled.div`
     align-items: center;
     width: 50%;
     height: auto;
-
-
 `

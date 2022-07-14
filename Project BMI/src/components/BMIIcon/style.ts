@@ -4,7 +4,7 @@ type BMIProps = {
     bg: string
 }
 
-export const BMIIcon = styled.aside<BMIProps>`
+export const BMIIcon = styled.div<BMIProps>`
 
     width: 80%;
     height: 80%;
@@ -22,12 +22,11 @@ export const BMIIcon = styled.aside<BMIProps>`
         display: flex;
         justify-content: baseline;
         align-items: center;
-
     }
     
     img {
         margin: auto;
-        width: 40px;
+        width: 70%;
     }
 
     h1, h2, h3 {

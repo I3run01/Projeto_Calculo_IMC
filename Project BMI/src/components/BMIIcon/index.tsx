@@ -14,7 +14,7 @@ type Props = {
 export const BMIICon = ({bg, image, title, ResponseWeight, subtittle}: Props) => {
 
     return (
-        <S.BMIIcon bg={bg}>
+        <S.BMIIcon bg={bg} id="BMIIcon">
             <div><img src={image} alt="" /></div> 
             <h1>{title}</h1>
             <h2>{ResponseWeight}</h2>
