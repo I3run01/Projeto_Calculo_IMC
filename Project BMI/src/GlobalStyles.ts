@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const main = styled.main`
-    max-width: 1200px;
+    max-width: 800px;
     margin: auto;
     padding: 40px;
 `
@@ -17,4 +17,6 @@ export const Aside = styled.div`
     align-items: center;
     width: 50%;
     height: auto;
-`
+    position: relative;
+` 
+

@@ -3,6 +3,7 @@ import { Nav } from './components/Nav'
 import { Article } from './components/Article'
 import { BMIICon } from './components/BMIIcon'
 import { FourIcons } from './components/4Icons'
+import { BackBTN } from './components/BackBTN'
 import { useState } from 'react'
 
 function App() {
@@ -12,12 +13,16 @@ function App() {
   const [showOW, setShowOW] = useState(false)
   const [showTOW, setShowTOW] = useState(false)
   const [showFI, setShowFI] = useState(true)
+  const [showBackBTC, setShowBackBTN] = useState(false)
 
   const [BMI, SetBMI] = useState(0)
 
   const BMIShow = (value: number) => {
     if(isNaN(value) == true || value == Infinity) value = 0
     else SetBMI(Number(value.toFixed(2)))
+
+    if (value != 0) setShowBackBTN(true)
+    else setShowBackBTN(false)
 
     if(value == 0) {
       setShowTL(false)
@@ -55,6 +60,16 @@ function App() {
       setShowFI(false)
 
     }
+  }
+
+  const ShowBackBTC = () => {
+    setShowBackBTN(false)
+    setShowTL(false)
+    setShowN(false)
+    setShowOW(false)
+    setShowTOW(false)
+    setShowFI(true)
+
   }
 
   return (
@@ -103,10 +118,18 @@ function App() {
             {showFI && 
               <FourIcons></FourIcons>
             }
+
+            {showBackBTC &&
+              <BackBTN HideBTN={ShowBackBTC} ></BackBTN>
+            }
+            
+
+            
+            
             
           </G.Aside>
         </G.FlexDiv>
-
+        
       </G.main>
       
     </div>
