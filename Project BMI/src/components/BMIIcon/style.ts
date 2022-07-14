@@ -53,5 +53,9 @@ export const BMIIcon = styled.div<BMIProps>`
         margin: 40px;
     }
 
+    @media only screen and (max-width: 920px) {
+        width: 300px;
+
+    }
 
 `

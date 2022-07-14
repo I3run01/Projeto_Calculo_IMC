@@ -39,6 +39,7 @@ export const article = styled.article`
 
         :hover {
             background-color: green;
+            cursor: pointer;
         }
         
     }

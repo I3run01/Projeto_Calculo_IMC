@@ -22,4 +22,16 @@ export const BMIIcon = styled.div`
         align-items: center;
         transform: scale(0.5);
     }
+
+    @media only screen and (max-width: 920px) {
+        width: 60px;
+        height: 60px;
+        
+        transform: translate(-50%);
+        bottom: -80px;
+        left: 50%;
+        
+        
+  
+    }
 `
