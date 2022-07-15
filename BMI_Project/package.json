@@ -2,7 +2,7 @@
   "name": "react-vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://i3run01.github.io/Projeto_Calculo_IMC/",
+  "homepage": "https://i3run01.github.io/Projeto_Calculo_IMC",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
